@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pixel Party — quick, colorful games for friends." />
+    <title>Pixel Party | Play together</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar" aria-label="Main navigation">
+        <button class="brand" data-screen="home" aria-label="Back to Pixel Party home">
+          <span class="brand-mark">PP</span>
+          <span>PIXEL<br /><strong>PARTY</strong></span>
+        </button>
+        <div class="topbar-note"><span class="status-dot"></span> CLASSROOM MODE</div>
+      </header>
+
+      <main>
+        <section id="home-screen" class="screen active" aria-labelledby="home-title">
+          <div class="hero-copy">
+            <p class="eyebrow">WELCOME TO THE ARCADE</p>
+            <h1 id="home-title">Big fun.<br /><span>Small pixels.</span></h1>
+            <p class="hero-text">A quick break for clever minds. Pick a game, challenge a friend, and keep your winning streak alive.</p>
+            <button class="primary-button" data-screen="games">ENTER THE PARTY <span>→</span></button>
+            <div class="hero-stats"><span><b>03</b> mini games</span><span><b>∞</b> rematches</span><span><b>★</b> good vibes</span></div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="pixel-sun"></div>
+            <div class="pixel-cloud cloud-one"></div><div class="pixel-cloud cloud-two"></div>
+            <div class="arcade-cabinet"><div class="cabinet-screen"><span>READY?</span><small>PRESS START</small></div><div class="cabinet-controls"><i></i><i></i><b></b></div><div class="cabinet-base"></div></div>
+            <div class="floating-chip chip-one">✦</div><div class="floating-chip chip-two">?</div><div class="floating-chip chip-three">●</div>
+          </div>
+        </section>
+
+        <section id="games-screen" class="screen" aria-labelledby="games-title">
+          <div class="section-heading"><div><p class="eyebrow">CHOOSE YOUR CHALLENGE</p><h2 id="games-title">What are we playing?</h2></div><span class="game-count">3 GAMES READY</span></div>
+          <div class="game-grid">
+            <button class="game-card card-purple" data-game="ttt"><span class="card-number">01</span><span class="game-icon ttt-icon">×○</span><h3>Tic Tac Toe</h3><p>Classic strategy. Instant rematch.</p><span class="card-link">PLAY NOW →</span></button>
+            <button class="game-card card-orange" data-game="dots"><span class="card-number">02</span><span class="game-icon dots-icon">⠿</span><h3>Dots &amp; Boxes</h3><p>Claim the most squares to win.</p><span class="card-link">PLAY NOW →</span></button>
+            <button class="game-card card-blue" data-game="wordle"><span class="card-number">03</span><span class="game-icon wordle-icon">ABC</span><h3>Wordle</h3><p>Six tries. One secret word.</p><span class="card-link">PLAY NOW →</span></button>
+          </div>
+          <div class="tip-banner"><span>✦</span><p><b>PARTY TIP:</b> Games are short, so you can always play “just one more.”</p></div>
+          <section class="experience-panel" aria-labelledby="experience-title"><div class="experience-heading"><p class="eyebrow">JUST FOR FUN</p><h3 id="experience-title">More Experience</h3><p>Explore, experiment, and play with the piano or fidget board.</p></div><button id="piano-experience-card" class="experience-piano-card" type="button" aria-expanded="false"><span class="card-number">01</span><span class="experience-piano-icon">♫</span><h4>Piano</h4></button><button id="fidget-experience-card" class="experience-piano-card fidget-experience-card" type="button" aria-expanded="false"><span class="card-number">02</span><span class="experience-piano-icon">☼</span><h4>Fidget Board</h4></button><div id="piano-player" class="piano-player experience-piano" hidden></div></section>
+        </section>
+
+        <section id="ttt-screen" class="screen game-screen" aria-labelledby="ttt-title">
+          <div class="game-header"><button class="back-button" data-screen="games">← ALL GAMES</button><span class="game-tag purple-tag">TWO WAYS TO PLAY</span></div>
+          <div class="play-layout"><div class="game-intro"><p class="eyebrow">GAME 01 / STRATEGY</p><h2 id="ttt-title">Tic Tac<br /><span>Toe</span></h2><p>Get three in a row before your opponent does. Every move counts.</p><div class="mode-switch" role="group" aria-label="Tic Tac Toe game mode"><button class="mode-button active" data-mode="bot">VS BOT</button><button class="mode-button" data-mode="friend">VS FRIEND</button></div><button class="secondary-button" data-action="ttt-reset">NEW ROUND ↻</button></div>
+            <div class="board-panel"><div class="score-row"><span id="ttt-turn">YOUR TURN <b>●</b></span><span class="score-pill">YOU <b id="ttt-you-score">0</b> · <b id="ttt-opponent-label">BOT</b> <b id="ttt-opponent-score">0</b></span></div><div id="ttt-board" class="ttt-board" role="grid" aria-label="Tic Tac Toe board"></div><p id="ttt-message" class="board-message">Place your X to start!</p></div>
+          </div>
+        </section>
+
+        <section id="dots-screen" class="screen game-screen" aria-labelledby="dots-title">
+          <div class="game-header"><button class="back-button" data-screen="games">← ALL GAMES</button><span class="game-tag orange-tag">BOT OR FRIEND</span></div>
+          <div class="play-layout"><div class="game-intro"><p class="eyebrow">GAME 02 / QUICK THINKING</p><h2 id="dots-title">Dots <span>&amp;</span><br />Boxes</h2><p>Draw a line, close a box, score a point. The player with the most boxes wins.</p><div class="dots-mode-switch" role="group" aria-label="Dots and Boxes game mode"><button class="dots-mode-button active" type="button" data-dots-mode="bot">VS BOT</button><button class="dots-mode-button" type="button" data-dots-mode="friend">VS FRIEND</button></div><form id="dots-names-form" class="dots-names-form" hidden><label>Player 1 name<input id="dots-p1-name-input" maxlength="14" autocomplete="off" placeholder="Player 1" disabled /></label><label>Player 2 name<input id="dots-p2-name-input" maxlength="14" autocomplete="off" placeholder="Player 2" disabled /></label><button class="primary-button" type="submit">START GAME →</button></form><button class="secondary-button" data-action="dots-reset">RESET BOARD ↻</button><div class="player-legend"><span><i class="legend-dot coral"></i> <b id="dots-p1-label">PLAYER 1</b> <b id="dots-p1-score">0</b></span><span><i class="legend-dot teal"></i> <b id="dots-p2-label">BOT</b> <b id="dots-p2-score">0</b></span></div></div><div class="board-panel dots-panel"><div class="score-row"><span id="dots-turn">PLAYER 1'S TURN</span><span class="score-pill">FIRST TO FILL THE GRID</span></div><div id="dots-board" class="dots-board" role="grid" aria-label="Dots and Boxes board"></div><p id="dots-message" class="board-message">Pick any open line to begin.</p></div></div>
+        </section>
+
+        <section id="wordle-screen" class="screen game-screen" aria-labelledby="wordle-title">
+          <div class="game-header"><button class="back-button" data-screen="games">← ALL GAMES</button><span class="game-tag blue-tag">DAILY BRAIN TEASER</span></div>
+          <div class="play-layout wordle-layout"><div class="game-intro"><p class="eyebrow">GAME 03 / WORD SKILLS</p><h2 id="wordle-title">Wordle<span>.</span></h2><p>Guess the five-letter word in six tries. Green means right letter, right spot.</p><div class="wordle-rules"><span class="rule-key green-key">A</span><span>Right letter, right place</span><span class="rule-key yellow-key">B</span><span>Right letter, wrong place</span></div><button class="secondary-button" data-action="wordle-reset">NEW WORD ↻</button></div><div class="board-panel wordle-panel"><div id="wordle-grid" class="wordle-grid" aria-label="Wordle guesses"></div><div id="keyboard" class="keyboard" aria-label="Wordle keyboard"></div><p id="wordle-message" class="board-message">Guess the word!</p></div></div>
+        </section>
+      </main>
+      <footer><span>PIXEL PARTY © 2025</span><span>MADE FOR FRIENDS WHO LIKE TO THINK</span></footer>
+    </div>
+    <script src="wordle-words.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
